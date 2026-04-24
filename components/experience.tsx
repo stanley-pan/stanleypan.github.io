@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { withBasePath } from "@/lib/base-path";
+
 interface ImageCard {
   src: string;
   label: string;
@@ -41,9 +43,9 @@ const experiences: Experience[] = [
       "Mentored 10+ junior engineers in schematic capture, PCB layout, and hardware debugging workflows, enabling independent contributions to rover electrical systems.",
     ],
     images: [
-      { src: "/pcb.jpg", label: "Spectroscopy Control Board" },
-      { src: "/pcb.jpg", label: "Voltage Monitoring Board" },
-      { src: "/rover.jpg", label: "Rover PDB" },
+      { src: withBasePath("/pcb.jpg"), label: "Spectroscopy Control Board" },
+      { src: withBasePath("/pcb.jpg"), label: "Voltage Monitoring Board" },
+      { src: withBasePath("/rover.jpg"), label: "Rover PDB" },
     ],
   },
 ];

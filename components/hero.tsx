@@ -1,5 +1,3 @@
-import { withBasePath } from "@/lib/base-path";
-
 export default function Hero() {
   return (
     <section id="about" className="pt-28 pb-20 px-4">
@@ -50,7 +48,7 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href={withBasePath("/resume.pdf")}
+                href="/resume.pdf"
                 className="inline-flex items-center rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-700 transition"
               >
                 Resume
@@ -92,7 +90,7 @@ export default function Hero() {
           {/* Right: headshot */}
           <div className="hidden sm:block flex-shrink-0 mt-24">
             <img
-              src={withBasePath("/head2.jpg")}
+              src="/head2.jpg"
               alt="Stanley Pan"
               className="w-80 h-96 rounded-2xl object-cover"
               style={{ objectPosition: "center 30%" }}

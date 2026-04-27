@@ -17,7 +17,7 @@ export default function Header() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="relative flex h-14 items-center justify-between gap-3">
           <Link href="/" className="text-sm font-semibold text-white transition hover:text-white/70">
-            <span className="text-[#d4af37]">Stanley</span> Pan
+            Stanley Pan
           </Link>
           <nav>
             <ul className="flex items-center gap-6">

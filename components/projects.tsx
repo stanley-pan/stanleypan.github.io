@@ -1,4 +1,11 @@
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  href: string;
+}
+
+const projects: Project[] = [
   {
     title: "Dual-Core ML/AI Accelerator for Transformer Attention",
     description:
@@ -18,6 +25,13 @@ const projects = [
     description:
       "Custom PCB with ArduSub-based control software on Raspberry Pi 4 for servo and BLDC motor actuation, replicating fish-like propulsion. Integrated Pixhawk telemetry, pressure sensor, and camera feed for real-time state estimation and depth monitoring.",
     tags: ["PCB Design", "ArduSub", "Raspberry Pi", "Pixhawk", "Embedded"],
+    href: "#",
+  },
+  {
+    title: "Arm Monitoring Board",
+    description:
+      "Custom 2-layer PCB for wearable arm monitoring, featuring signal routing for top/bottom copper, silkscreen legend, and soldermask layers. Designed for embedded sensing applications.",
+    tags: ["PCB Design", "Embedded", "Sensors"],
     href: "#",
   },
 ];

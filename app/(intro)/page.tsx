@@ -55,7 +55,7 @@ export default function Page() {
 
   // Loading → ready after 0.6 s
   useEffect(() => {
-    const t = setTimeout(() => setStage("ready"), 600);
+    const t = setTimeout(() => setStage("ready"), 300);
     return () => clearTimeout(t);
   }, []);
 
@@ -65,12 +65,24 @@ export default function Page() {
 
   // Click anywhere on hero = smooth-scroll through the collapse
   const scrollToPortfolio = () => {
-    portfolioRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = portfolioRef.current;
+    if (!target) return;
+    const start = window.scrollY;
+    const end = start + target.getBoundingClientRect().top;
+    const duration = 400; // ms — increase to slow down
+    const startTime = performance.now();
+    const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    const step = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, start + (end - start) * ease(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   };
 
   return (
     <>
-      <style>{`
+      <style precedence="default" href="shimmer-keyframes">{`
         @keyframes shimmer {
           0%   { background-position: 250% center; }
           100% { background-position: -150% center; }
